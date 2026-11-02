@@ -1,0 +1,19 @@
+{
+  "name": "gut-health-assessment",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w frontend",
+    "build": "npm run build -w frontend",
+    "test": "vitest run",
+    "dev:backend": "npm run dev -w backend"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.5"
+  }
+}
