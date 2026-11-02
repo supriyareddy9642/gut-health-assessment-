@@ -8,7 +8,12 @@ import assessmentRoutes from './src/routes/assessmentRoutes.js';
 
 const app = express();
 const port = Number(process.env.PORT || 4000);
-const origins = (process.env.FRONTEND_ORIGIN || 'http://localhost:5173').split(',').map(x => x.trim());
+// const origins = (process.env.FRONTEND_ORIGIN || 'http://localhost:5173').split(',').map(x => x.trim());
+const origins = [
+  'http://localhost:5173',
+  'https://gut-health-assessment.netlify.app',
+  ...(process.env.FRONTEND_ORIGIN || '').split(',').map(x => x.trim())
+].filter(Boolean);
 
 app.disable('x-powered-by');
 app.use(helmet());
